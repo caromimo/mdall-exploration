@@ -1,4 +1,4 @@
-# Testing credentials
+# Testing credentials (for development only - not for production)
 direction = up
 user = mdall
 password = mdall
