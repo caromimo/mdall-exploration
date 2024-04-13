@@ -46,3 +46,19 @@ cat data/devices.json | jq -r '.[] | [.device_id, .original_licence_no, .first_l
 * Connect to the database with `make connect`
 * Import data from the csv with `\copy companies from 'companies.csv' delimiter ',' csv`
 
+## DATABASE DIAGRAMS
+
+See personal account at https://dbdiagram.io/
+
+## Random notes
+
+To get all licence types: 
+```
+jq -r '.[].licence_type_desc' data/device_licences.json | sort | uniq
+Device Family
+Device Group
+Device Group Family
+Single Device
+System
+Test Kit
+```
