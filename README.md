@@ -64,3 +64,7 @@ Single Device
 System
 Test Kit
 ```
+## Notes
+
+The [pg8000](https://pypi.org/project/pg8000/) is a native Python library for connecting to postgres databases.  
+The [ijson](https://pypi.org/project/ijson/) is Python library for reading json data from large files. Here is an [example](https://pythonspeed.com/articles/json-memory-streaming/). This is a good option for large files as it is reading the json file line by line.
