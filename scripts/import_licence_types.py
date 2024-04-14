@@ -2,7 +2,7 @@ import os
 import pg8000.native
 import ijson
 
-password = os.getenv("DB_PASSWORD")
+password = os.getenv("DATABASE_PASSWORD")
 
 # Connect to the postgres database
 
