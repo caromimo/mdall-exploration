@@ -3,10 +3,7 @@ name = ""
 version = ""
 description = ""
 authors = [{ name = "Caroline Mimeault", email = "carolinemimeault@gmail.com" }]
-dependencies = [
-    "pg8000>=1.31.1",
-    "ijson>=3.2.3",
-]
+dependencies = ["pg8000>=1.31.1", "ijson>=3.2.3"]
 requires-python = ">=3.11"
 license = { text = "MIT" }
 
@@ -17,5 +14,5 @@ requires = ["pdm-pep517>=1.0.0"]
 build-backend = "pdm.pep517.api"
 
 [tool.pdm.scripts]
-start.cmd = "python scripts/data_import.py"
+start.cmd = "python scripts/import_data.py"
 start.env_file = ".env"
