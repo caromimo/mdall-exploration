@@ -1,6 +1,10 @@
-# Notes
+# Exploring Medical Devices Active Licences Listing (MDALL) data
+
+This is a personal project to explore the data available from the [Medical Devices Active Licences Listing (MDALL) API](https://health-products.canada.ca/api/documentation/mdall-documentation-en.html).
 
 ## GETTING DATA FROM THE COMMAND LINE:
+
+First download the data at the command line: 
 
 ### Device identifiers
 ```
@@ -28,7 +32,8 @@ curl "https://health-products.canada.ca/api/medical-devices/licencetype" > data/
 ```
 
 ## CONVERTING JSON TO CSV AT THE COMMAND LINE:
-## Because postgres cannot read JSON
+
+Because postgres cannot read JSON
 
 ## Create the companies csv
 ```
@@ -46,9 +51,6 @@ cat data/devices.json | jq -r '.[] | [.device_id, .original_licence_no, .first_l
 * Connect to the database with `make connect`
 * Import data from the csv with `\copy companies from 'companies.csv' delimiter ',' csv`
 
-## DATABASE DIAGRAMS
-
-See personal account at https://dbdiagram.io/
 
 ## Random notes
 
