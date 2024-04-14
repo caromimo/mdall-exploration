@@ -14,5 +14,23 @@ requires = ["pdm-pep517>=1.0.0"]
 build-backend = "pdm.pep517.api"
 
 [tool.pdm.scripts]
-start.cmd = "python scripts/import_data.py"
-start.env_file = ".env"
+_.env_file = ".env"
+companies = "python scripts/import_companies.py"
+identifiers = "python scripts/import_device_identifiers.py"
+licences = "python scripts/import_device_licences.py"
+devices = "python scripts/import_devices.py"
+licencetypes = "python scripts/import_licence_types.py"
+all = { composite = [
+    "companies",
+    "identifiers",
+    "licences",
+    "devices",
+    "licencetypes",
+] }
+create = { shell = "docker run -d -e POSTGRES_USER=$DATABASE_USER -e POSTGRES_PASSWORD=$DATABASE_PASSWORD --network=host postgres:14.11" }
+connect = { shell = "psql --host=localhost --username=$DATABASE_USER --dbname=$DATABASE --password" }
+destroy = { shell = "docker stop $(docker ps -q)" }
+dbdump = { shell = "pg_dump -s -F p -E UTF-8 --host=localhost --username=$DATABASE_USER --dbname=$DATABASE --password" }
+createmigration = "migrate create -ext sql -dir migrations -seq" # for example pdm createmigration test
+migrateup = { shell = "migrate -database $DATABASE_URL -path migrations up" }
+migratedown = { shell = "migrate -database $DATABASE_URL -path migrations down 1" }
