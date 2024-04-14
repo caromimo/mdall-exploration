@@ -9,7 +9,6 @@ CREATE TABLE "companies" (
   "status" text
 );
 
-
 CREATE TABLE "devices" (
   "id" integer PRIMARY KEY UNIQUE,
   "name" text,
