@@ -27,7 +27,7 @@ CREATE TYPE typedescription AS ENUM (
   );
 
 CREATE TABLE "licence_types" (
-  "id" integer PRIMARY KEY UNIQUE,
+  "id" integer PRIMARY KEY UNIQUE GENERATED ALWAYS AS IDENTITY,
   "code" typecode,
   "description" typedescription
 );
