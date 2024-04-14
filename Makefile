@@ -8,11 +8,15 @@ DATABASE_URL = postgres://$(user):$(password)@$(host):5432/$(database)?sslmode=d
 
 .PHONY: db
 db:
-	docker run -d -e POSTGRES_USER=$(user) -e POSTGRES_PASSWORD=$(password) --network=host postgres
+	docker run -d -e POSTGRES_USER=$(user) -e POSTGRES_PASSWORD=$(password) --network=host postgres:14.11
 
 .PHONY: connect
 connect:
 	psql --host=localhost --username=$(user) --dbname=$(database) --password
+
+.PHONY: dump
+dump:
+	pg_dump -s -F p -E UTF-8 --host=localhost --username=$(user) --dbname=$(database) --password
 
 .PHONY: migration
 migration:
