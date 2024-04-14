@@ -1,7 +1,7 @@
 [project]
-name = ""
-version = ""
-description = ""
+name = "MDALL"
+version = "0.0.1"
+description = "Personal exploration of open data"
 authors = [{ name = "Caroline Mimeault", email = "carolinemimeault@gmail.com" }]
 dependencies = ["pg8000>=1.31.1", "ijson>=3.2.3"]
 requires-python = ">=3.11"
