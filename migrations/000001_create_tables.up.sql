@@ -1,5 +1,5 @@
 CREATE TABLE "companies" (
-  "id" integer PRIMARY KEY UNIQUE,
+  "id" integer PRIMARY KEY UNIQUE GENERATED ALWAYS AS IDENTITY,
   "name" text,
   "address" text,
   "postal_code" text,
@@ -10,7 +10,7 @@ CREATE TABLE "companies" (
 );
 
 CREATE TABLE "devices" (
-  "id" integer PRIMARY KEY UNIQUE,
+  "id" integer PRIMARY KEY UNIQUE GENERATED ALWAYS AS IDENTITY,
   "name" text,
   "licence_number" integer
 );
@@ -33,7 +33,7 @@ CREATE TABLE "licence_types" (
 );
 
 CREATE TABLE "licences" (
-  "number" integer PRIMARY KEY UNIQUE,
+  "number" integer PRIMARY KEY UNIQUE GENERATED ALWAYS AS IDENTITY,
   "status" text,
   "risk_class" integer,
   "created_on" date,
@@ -44,7 +44,7 @@ CREATE TABLE "licences" (
 );
 
 CREATE TABLE "licences_devices" (
-  "id" integer PRIMARY KEY UNIQUE,
+  "id" integer PRIMARY KEY UNIQUE GENERATED ALWAYS AS IDENTITY,
   "licence_number" integer REFERENCES licences(number),
   "device_id" integer REFERENCES devices(id)
 );
