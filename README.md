@@ -1,6 +1,6 @@
 # Exploring Medical Devices Active Licences Listing (MDALL) data
 
-This is a personal project to explore the data available from the [Medical Devices Active Licences Listing (MDALL) API](https://health-products.canada.ca/api/documentation/mdall-documentation-en.html).
+This is a personal project to explore the data available from the [Medical Devices Active Licences Listing (MDALL) API](https://health-products.canada.ca/api/documentation/mdall-documentation-en.html). Please note that instead of a Makefile, I am using pdm tool scripts detailed in the pyproject.toml file.
 
 ## GETTING DATA FROM THE COMMAND LINE:
 
