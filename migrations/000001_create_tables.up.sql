@@ -11,6 +11,7 @@ CREATE TABLE "companies" (
 
 CREATE TABLE "devices" (
   "id" integer PRIMARY KEY UNIQUE GENERATED ALWAYS AS IDENTITY,
+  "device_id" integer,
   "name" text,
   "licence_number" integer
 );
