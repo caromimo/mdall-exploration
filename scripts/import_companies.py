@@ -13,9 +13,11 @@ con = pg8000.native.Connection("mdall", password=password)
 with open("./data/companies.json", "rb") as file:
     for record in ijson.items(file, "item"):
         print(record)
-        address = (
-            # TODO: review the concatenation of the address (such as: 845 Ave G East, , )
-            f"{record['addr_line_1']} {record['addr_line_2']} {record['addr_line_3']}"
+        address = ",".join(
+            filter(
+                None,
+                [record["addr_line_1"], record["addr_line_2"], record["addr_line_3"]],
+            )
         )
         con.run(
             """INSERT INTO companies (id, name, address, postal_code, city, country, region, status) 
