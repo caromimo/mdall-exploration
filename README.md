@@ -6,11 +6,6 @@ This is a personal project to explore the data available from the [Medical Devic
 
 First download the data at the command line: 
 
-### Device identifiers
-```
-curl "https://health-products.canada.ca/api/medical-devices/deviceidentifier/" > data/device_identifiers.json
-```
-
 ### Devices
 ```
 curl "https://health-products.canada.ca/api/medical-devices/device/" > data/devices.json
@@ -33,7 +28,7 @@ curl "https://health-products.canada.ca/api/medical-devices/licencetype" > data/
 
 ## Steps (all defined in pyproject.toml file):
 * Create a local instance of the database with Docker: `pdm create`
-* Migrate the database with `pdm migrateup`
+* Migrate the database with `pdm up`
 * Connect to the database with `pdm connect`
 
 
