@@ -24,6 +24,7 @@ create = { shell = "docker run -d -e POSTGRES_USER=$DATABASE_USER -e POSTGRES_PA
 connect = { shell = "psql --host=localhost --username=$DATABASE_USER --dbname=$DATABASE --password" }
 destroy = { shell = "docker stop $(docker ps -q)" }
 dbdump = { shell = "pg_dump -s -F p -E UTF-8 --host=localhost --username=$DATABASE_USER --dbname=$DATABASE --password" }
-migration = "migrate create -ext sql -dir migrations -seq"                                                                                 # for example pdm createmigration test
-up = { shell = "migrate -database $DATABASE_URL -path migrations up" }
-down = { shell = "migrate -database $DATABASE_URL -path migrations down 1" }
+# newmigration example: pdm newmigration test
+newmigration = "migrate create -ext sql -dir migrations -seq"
+migrateup = { shell = "migrate -database $DATABASE_URL -path migrations up" }
+migratedown = { shell = "migrate -database $DATABASE_URL -path migrations down 1" }
