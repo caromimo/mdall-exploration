@@ -28,7 +28,8 @@ curl "https://health-products.canada.ca/api/medical-devices/licencetype" > data/
 
 ## Steps (all defined in pyproject.toml file):
 * Create a local instance of the database with Docker: `pdm create`
-* Migrate the database with `pdm up`
+* Run migration to create all tables in the database with `pdm migrateup`
+* Run script to import all data (json) into the database with `pdm all`
 * Connect to the database with `pdm connect`
 
 
