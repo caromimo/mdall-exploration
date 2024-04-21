@@ -34,4 +34,5 @@ dbdump = { shell = "pg_dump -s -F p -E UTF-8 --host=localhost --username=$DATABA
 newmigration = "migrate create -ext sql -dir migrations -seq"
 migrateup = { shell = "migrate -database $DATABASE_URL -path migrations up" }
 migratedown = { shell = "migrate -database $DATABASE_URL -path migrations down 1" }
-server = "uvicorn main:app --reload"
+# syntax to import a python module system (app.main:app instead of the file path app/main:app)
+server = "uvicorn app.main:app --reload"
